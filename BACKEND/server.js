@@ -19,10 +19,15 @@ dotenv.config();
 
 /* ------------------ APP SETUP ------------------ */
 const app = express();
-app.use(cors({
-  origin: "https://chattrix-frontend-ten.vercel.app",
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://chattrix-frontend-ten.vercel.app",
+    ],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 /* ------------------ DATABASE ------------------ */
