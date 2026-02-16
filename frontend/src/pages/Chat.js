@@ -331,11 +331,12 @@ function Chat() {
       <div
         className={`${
           selectedChat ? "flex" : "hidden sm:flex"
-        } flex-1 flex-col min-w-0 h-[100dvh] sm:h-auto`}
+        } fixed inset-0 flex-col min-w-0 w-full`}
       >
         {selectedChat && (
           <>
-            <div className="p-4 border-b border-borderColor flex items-center gap-3 sticky top-0 bg-surface z-10">
+            {/* HEADER */}
+            <div className="p-4 border-b border-borderColor flex items-center gap-3 bg-surface z-10 shrink-0">
               <button
                 onClick={() => setSelectedChat(null)}
                 className="sm:hidden"
@@ -361,6 +362,7 @@ function Chat() {
               </div>
             </div>
 
+            {/* MESSAGE CONTAINER */}
             <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-2">
               {messages.map((msg) => {
                 const isMe = getSenderId(msg) === user._id;
@@ -389,9 +391,10 @@ function Chat() {
               <div ref={bottomRef} />
             </div>
 
+            {/* INPUT */}
             <form
               onSubmit={sendMessage}
-              className="p-4 border-t border-borderColor flex gap-2 sticky bottom-0 bg-surface"
+              className="p-4 border-t border-borderColor flex gap-2 bg-surface shrink-0"
             >
               <input
                 value={newMessage}
@@ -785,11 +788,11 @@ export default Chat;
 //       <div
 //         className={`${
 //           selectedChat ? "flex" : "hidden sm:flex"
-//         } flex-1 flex-col min-w-0`}
+//         } flex-1 flex-col min-w-0 h-[100dvh] sm:h-auto`}
 //       >
 //         {selectedChat && (
 //           <>
-//             <div className="p-4 border-b border-borderColor flex items-center gap-3">
+//             <div className="p-4 border-b border-borderColor flex items-center gap-3 sticky top-0 bg-surface z-10">
 //               <button
 //                 onClick={() => setSelectedChat(null)}
 //                 className="sm:hidden"
@@ -845,7 +848,7 @@ export default Chat;
 
 //             <form
 //               onSubmit={sendMessage}
-//               className="p-4 border-t border-borderColor flex gap-2"
+//               className="p-4 border-t border-borderColor flex gap-2 sticky bottom-0 bg-surface"
 //             >
 //               <input
 //                 value={newMessage}
