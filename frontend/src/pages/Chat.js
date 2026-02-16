@@ -331,11 +331,11 @@ function Chat() {
       <div
         className={`${
           selectedChat ? "flex" : "hidden sm:flex"
-        } flex-1 flex-col min-w-0`}
+        } flex-1 flex-col min-w-0 h-[100dvh] sm:h-auto`}
       >
         {selectedChat && (
           <>
-            <div className="p-4 border-b border-borderColor flex items-center gap-3">
+            <div className="p-4 border-b border-borderColor flex items-center gap-3 sticky top-0 bg-surface z-10">
               <button
                 onClick={() => setSelectedChat(null)}
                 className="sm:hidden"
@@ -391,7 +391,7 @@ function Chat() {
 
             <form
               onSubmit={sendMessage}
-              className="p-4 border-t border-borderColor flex gap-2"
+              className="p-4 border-t border-borderColor flex gap-2 sticky bottom-0 bg-surface"
             >
               <input
                 value={newMessage}
@@ -766,11 +766,13 @@ export default Chat;
 //                   )}
 //                 </div>
 
-//                 <p className="text-sm truncate text-textMuted mt-1">
+//                 <p className="text-sm truncate text-textMuted">
 //                   {typingChats[chat._id]
 //                     ? "Typing..."
 //                     : lastMsg
-//                       ? lastMsg.content
+//                       ? getSenderId(lastMsg) === user._id
+//                         ? `You: ${lastMsg.content}`
+//                         : lastMsg.content
 //                       : "No messages yet"}
 //                 </p>
 //               </div>
