@@ -58,7 +58,7 @@ function Register() {
             Create your account
           </h3>
 
-          <form onSubmit={submitHandler} className="space-y-4">
+          <form onSubmit={submitHandler} className="space-y-4 text-white">
             <input
               type="text"
               required

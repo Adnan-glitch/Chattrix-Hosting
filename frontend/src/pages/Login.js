@@ -32,10 +32,8 @@ function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f172a] to-[#020617] px-4">
-      
       {/* Wrapper to stack heading + card */}
       <div className="w-full max-w-md flex flex-col items-center">
-
         {/* Main App Title */}
         <h2 className="text-3xl font-bold text-center mb-8 text-white">
           Welcome to{" "}
@@ -50,7 +48,7 @@ function Login() {
             Let’s get you back in
           </h3>
 
-          <form onSubmit={submitHandler} className="space-y-4">
+          <form onSubmit={submitHandler} className="space-y-4 text-white">
             <input
               type="email"
               required
@@ -85,7 +83,6 @@ function Login() {
             </Link>
           </p>
         </div>
-
       </div>
     </div>
   );
