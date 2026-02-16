@@ -331,7 +331,7 @@ function Chat() {
       <div
         className={`${
           selectedChat ? "flex" : "hidden sm:flex"
-        } fixed inset-0 flex-col min-w-0 w-full`}
+        } flex-col min-w-0 w-full sm:static fixed inset-0 sm:flex-1`}
       >
         {selectedChat && (
           <>
